@@ -3,6 +3,14 @@ using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int lp = 0;
+    int n;
+
+    cout << "Ile liczb pierwszych chcesz wyswietlic: ";
+    cin >> n;
+
+    while (lp < n) {
+        for(int )
+    }
 }
 
