@@ -4,30 +4,25 @@ using namespace std;
 int main()
 {
     int lp = 0;
-    int p = 0;
-    int n = 2;
-    int d = 2;
+    int p = 2;
+    int n;
+    int d;
 
     cout << "Ile liczb pierwszych chcesz wyswietlic: ";
     cin >> lp;
-    cout << endl << "Liczby pierwsze: ";
 
-    while(lp < n){
-        while(d < n){
-            if(n % d == 0){
-                d = 2;
-                n++;
-                break;
+    while (lp < n){
+        for (d = 2; p--;) {
+            if (p % d == 0) {
+                p++;
+                cout << "Liczby pierwsze: " << p;
             }
-            d++;
+            else {
+                cout << "Liczby pierwsze: " << p;
+            }
         }
-    }
-    if(d >= n){
-        cout << n << ",";
-        d = 2;
-        n++;
         lp++;
+        p++;
     }
-
 }
 
