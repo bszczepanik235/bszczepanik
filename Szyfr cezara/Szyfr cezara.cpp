@@ -4,10 +4,9 @@ using namespace std;
 
 int main()
 {
-    int klucz, tab, dl;
+    int klucz, tab, dl, i = 0, z = 0, a = 0;
 
-    int tab[1000];
-    cout << "Podaj wyraz skladajcy sie z malych liter: " << endl;
+    cout << "Podaj wyraz skladajcy sie z malych liter: ";
     cin >> tab;
 
     cout << "Podaj klucz z przedialu [-26..26]: " << endl;
@@ -15,8 +14,8 @@ int main()
 
     dl = tab;
 
-    if (!klucz >= -26 and klucz <= 26) {
-        
+    if (-klucz >= -26 and klucz <= 26) {
+     
     }
 
     if (klucz >= 0) {
@@ -40,5 +39,7 @@ int main()
         }
     }
 
-  
+    cout << "Po zaszyfrowaniu: " << -klucz << endl;
+    cout << "Po rozszyfrowaniu: " << klucz << endl;
+
 }
