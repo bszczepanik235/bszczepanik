@@ -2,44 +2,53 @@
 
 using namespace std;
 
-int main()
+void Cezar(char zdanie[], int Szyfr_cezara) 
 {
-    int klucz, tab, dl, i = 0, z = 0, a = 0;
+	int i;
 
-    cout << "Podaj wyraz skladajcy sie z malych liter: ";
-    cin >> tab;
+	if (Szyfr_cezara >= -26 && Szyfr_cezara <= 26) {
+		int d = strlen(zdanie);
+		if (Szyfr_cezara >= 0) {
+			for (i = 0; i < d; i++) {
+				if (zdanie[i] + Szyfr_cezara <= 'z') 
+				{
+					zdanie[i] += Szyfr_cezara;
+				}
+				else 
+				{
+					zdanie[i] = zdanie[i] + Szyfr_cezara - 26;
+				}
+			}
+		}
+		else if (Szyfr_cezara < 0) 
+		{
+			for (i = 0; i < d; i++) 
+			{
+				if (zdanie[i] + Szyfr_cezara >= 'a') 
+				{
+					zdanie[i] += Szyfr_cezara;
+				}
+				else 
+				{
+					zdanie[i] = zdanie[i] + Szyfr_cezara + 26;
+				}
+			}
+		}
+	}
+	cout << zdanie;
+}
+int main() 
+{
+	char tab[1000];
+	int klucz;
+	cout << "Podaj wyraz skladajacy sie z malych liter: ";
+	cin >> tab;
 
-    cout << "Podaj klucz z przedialu [-26..26]: " << endl;
-    cin >> klucz;
+	cout << "Podaj klucz z przedzialu [-26..26]: ";
+	cin >> klucz;
 
-    dl = tab;
+	cout << "Po zaszyfrowaniu: "; Cezar(tab, klucz);
+	cout << endl;
 
-    if (-klucz >= -26 and klucz <= 26) {
-     
-    }
-
-    if (klucz >= 0) {
-        while (i < dl) {
-            if (tab + klucz <= z) {
-                tab += klucz;
-            }
-            else {
-                tab = tab + klucz - 26;
-            }
-        }
-    }
-    else {
-        while (i < dl) {
-            if (tab + klucz >= a) {
-                tab += klucz;
-            }
-            else {
-                tab = tab + klucz + 26;
-            }
-        }
-    }
-
-    cout << "Po zaszyfrowaniu: " << -klucz << endl;
-    cout << "Po rozszyfrowaniu: " << klucz << endl;
-
+	cout << "Po rozszyfrowaniu: "; Cezar(tab, -klucz);
 }
