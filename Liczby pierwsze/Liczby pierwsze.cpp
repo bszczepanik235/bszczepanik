@@ -3,26 +3,36 @@ using namespace std;
 
 int main()
 {
-    int lp = 0;
-    int p = 2;
-    int n;
-    int d;
+	int n, lp, p;
+	bool t;
 
-    cout << "Ile liczb pierwszych chcesz wyswietlic: ";
-    cin >> lp;
+	cout << "Ile liczb pierwszych chcesz wyswietlic?: ";
+	cin >> n;
 
-    while (lp < n){
-        for (d = 2; p--;) {
-            if (p % d == 0) {
-                p++;
-                cout << "Liczby pierwsze: " << p;
-            }
-            else {
-                cout << "Liczby pierwsze: " << p;
-            }
-        }
-        lp++;
-        p++;
-    }
+	lp = 0;
+	p = 2;
+
+	while (lp < n) {
+		
+		t = true;
+		for (int i = 2; i < p; i++) 
+			if (p % i == 0)
+			{
+				t = false;
+				break;
+			}
+
+		if (t) {
+			cout << p << " ";
+			lp++;
+		}
+		p++;
+	}
+
+	cout << endl;
+	return 0;
 }
+
+
+
 
